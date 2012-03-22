@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+   <!-- base web script bean -->
+    <bean id="DerivAbstractWebScript" abstract="true" parent="webscript">
+      <property name="namespaceService" ref="NamespaceService" />
+      <property name="nodeService" ref="NodeService" />
+      <property name="contentService" ref="ContentService" />
+      <property name="searchService" ref="SearchService" />
+      <property name="transactionService" ref="transactionService" />
+      <property name="mimetypeService" ref="mimetypeService" />
+      <property name="copyService" ref="copyService"/>
+      <property name="authorityService" ref="authorityService" />
+      <property name="permissionService" ref="permissionService" />
+      <property name="ownableService" ref="ownableService" />
+      <property name="authenticationComponent" ref="authenticationComponent"/>
+    </bean>
+    
+    <bean id="webscript.edu.utep.trust.createnode.get"
+      class="edu.utep.trust.CreateNode" parent="DerivAbstractWebScript" />
+    <bean id="webscript.edu.utep.trust.fileupload.post"
+      class="edu.utep.trust.FileUploader" parent="DerivAbstractWebScript" />
+ 
+ 
+</beans>

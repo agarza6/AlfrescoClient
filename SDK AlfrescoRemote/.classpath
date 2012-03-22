@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="source"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="alfresco-web-service-client-3.4.c.jar" sourcepath="/SDK AlfrescoEmbedded/lib-src/alfresco-web-service-client-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/axis-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/commons-discovery-0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/commons-logging-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/jaxrpc.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/opensaml-1.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/wsdl4j-1.6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/xalan.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/xercesImpl-2.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="dependencies/xmlsec-1.4.1.jar"/>
+	<classpathentry kind="output" path="build"/>
+</classpath>

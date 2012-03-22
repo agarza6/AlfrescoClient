@@ -1,0 +1,51 @@
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0" 
+           xmlns:cm="http://www.alfresco.org/model/content/1.0"
+           xmlns:app="http://www.alfresco.org/model/application/1.0">
+
+   <cm:folder view:childName="cm:Categories">
+      <view:acl view:inherit="false">
+         <view:ace view:access="ALLOWED">
+            <view:authority>GROUP_EVERYONE</view:authority>
+            <view:permission>Read</view:permission>
+         </view:ace>
+      </view:acl>
+      <view:aspects>
+         <app:uifacets />
+      </view:aspects>
+      <view:properties>
+         <app:icon>space-icon-default</app:icon>
+         <cm:name>Categories</cm:name>
+      </view:properties>
+    </cm:folder>
+    <cm:folder view:childName="cm:Projects">
+      <view:acl view:inherit="false">
+         <view:ace view:access="ALLOWED">
+            <view:authority>GROUP_EVERYONE</view:authority>
+            <view:permission>Read</view:permission>
+         </view:ace>
+      </view:acl>
+      <view:aspects>
+         <app:uifacets />
+      </view:aspects>
+      <view:properties>
+         <app:icon>space-icon-default</app:icon>
+         <cm:name>Projects</cm:name>
+      </view:properties>
+    </cm:folder>    
+    <cm:folder view:childName="cm:Wiki">
+      <view:acl view:inherit="false">
+         <view:ace view:access="ALLOWED">
+            <view:authority>GROUP_EVERYONE</view:authority>
+            <view:permission>Read</view:permission>
+         </view:ace>
+      </view:acl>
+      <view:aspects>
+         <app:uifacets />
+      </view:aspects>
+      <view:properties>
+         <app:icon>space-icon-default</app:icon>
+         <cm:name>Wiki</cm:name>
+      </view:properties>
+    </cm:folder>    
+
+</view:view>

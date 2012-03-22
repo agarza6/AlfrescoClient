@@ -1,0 +1,35 @@
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0"
+   xmlns:cm="http://www.alfresco.org/model/content/1.0" xmlns:app="http://www.alfresco.org/model/application/1.0"
+   xmlns:sdkdi="http://www.pnl.gov/sdkdi/model/content/1.0">
+<!-- TODO associate with a team -->
+   <cm:folder>
+      <app:uifacets />
+      <cm:name>Project Root Parent</cm:name>
+      <app:icon>space-icon-default</app:icon>
+      <view:acl view:inherit="false">
+         <view:ace view:access="ALLOWED">
+            <view:authority>ROLE_OWNER</view:authority>
+            <view:permission>All</view:permission>
+         </view:ace>
+      </view:acl>
+      <cm:contains>
+         <cm:folder>
+            <app:uifacets />
+            <cm:name>Categories</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets />
+            <cm:name>Common Resources</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets />
+            <sdkdi:projectRoot />
+            <cm:name>Projects</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+      </cm:contains>
+   </cm:folder>
+</view:view>
+     

@@ -1,0 +1,71 @@
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0"
+   xmlns:cm="http://www.alfresco.org/model/content/1.0" xmlns:app="http://www.alfresco.org/model/application/1.0"
+   xmlns:sdkdi="http://www.pnl.gov/sdkdi/model/content/1.0">
+
+   <cm:folder>
+      <app:uifacets />
+      <sdkdi:project />
+      <cm:name>Project</cm:name>
+      <app:icon>space-icon-default</app:icon>
+      <view:acl view:inherit="false">
+         <view:ace view:access="ALLOWED">
+            <view:authority>ROLE_OWNER</view:authority>
+            <view:permission>All</view:permission>
+         </view:ace>
+      </view:acl>
+      <cm:contains>
+         <cm:folder>
+            <app:uifacets />
+            <cm:name>Study</cm:name>
+            <app:icon>space-icon-default</app:icon>
+            <cm:contains>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:experiments />
+                  <cm:name>Experiments</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:analyses />
+                  <cm:name>Analyses</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:simulations />
+                  <cm:name>Simulations</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:dataPackages />
+                  <cm:name>Data Packages</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+            </cm:contains>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets />
+            <sdkdi:public />
+            <cm:name>General Information</cm:name>
+            <app:icon>space-icon-default</app:icon>
+            <cm:contains>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:presentations />
+                  <cm:name>Presentations</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+               <cm:folder>
+                  <app:uifacets />
+                  <sdkdi:publications />
+                  <cm:name>Publications</cm:name>
+                  <app:icon>space-icon-default</app:icon>
+               </cm:folder>
+            </cm:contains>
+         </cm:folder>
+      </cm:contains>
+   </cm:folder>
+</view:view>
+     

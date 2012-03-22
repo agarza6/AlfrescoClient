@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Create Node</shortname>
+  <description>Create new Node</description>
+  <url>/derivA/createNode?project={project}&amp;filename={filename}</url>
+  <authentication>user</authentication>
+  <transaction>none</transaction>
+</webscript>

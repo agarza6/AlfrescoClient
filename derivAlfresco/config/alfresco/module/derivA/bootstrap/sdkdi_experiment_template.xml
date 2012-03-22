@@ -1,0 +1,34 @@
+<view:view xmlns:view="http://www.alfresco.org/view/repository/1.0" 
+           xmlns:cm="http://www.alfresco.org/model/content/1.0"
+           xmlns:app="http://www.alfresco.org/model/application/1.0"
+           xmlns:sdkdi="http://www.pnl.gov/sdkdi/model/content/1.0">
+
+   <cm:folder>
+      <app:uifacets/>
+      <sdkdi:experiment/>
+      <cm:name>Experiment</cm:name>
+      <app:icon>space-icon-default</app:icon>  
+      <cm:contains>
+         <cm:folder>
+            <app:uifacets/>
+            <cm:name>Samples</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets/>
+            <cm:name>Instruments</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets/>
+            <cm:name>Pre-Experiment Data</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+         <cm:folder>
+            <app:uifacets/>
+            <cm:name>Data Sets</cm:name>
+            <app:icon>space-icon-default</app:icon>
+         </cm:folder>
+      </cm:contains>
+   </cm:folder>
+</view:view>

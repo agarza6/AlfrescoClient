@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>File Upload</shortname>
+  <description>Upload New File</description>
+  <url>/derivA/fileUploader?uuid={uuid}</url>
+  <authentication>user</authentication>
+  <transaction>none</transaction>
+</webscript>
