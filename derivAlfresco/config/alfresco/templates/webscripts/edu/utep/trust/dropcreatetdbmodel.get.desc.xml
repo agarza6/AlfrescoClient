@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>drop then create TDB model</shortname>
+  <description>drop then create TDB model using any file with rdf at the given location uuid (company home if omitted)</description>
+  <url>/derivA/dropcreatetdbmodel?rootUuid={rootUuid}</url>
+  <authentication>user</authentication>
+  <transaction>none</transaction>
+</webscript>

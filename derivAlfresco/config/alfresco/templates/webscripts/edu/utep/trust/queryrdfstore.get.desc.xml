@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Query the RDF Store</shortname>
+  <description>Query the RDF Store</description>
+  <url>/derivA/queryrdfstore?query={query}</url>
+  <authentication>user</authentication>
+  <transaction>none</transaction>
+</webscript>

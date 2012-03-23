@@ -23,5 +23,18 @@
     <bean id="webscript.edu.utep.trust.fileupload.post"
       class="edu.utep.trust.FileUploader" parent="DerivAbstractWebScript" />
  
+  <bean id="webscript.edu.utep.trust.dropcreatedbmmodel.get" 
+    class="edu.utep.trust.DropCreateTDBModel" parent="DerivAbstractWebScript">
+    <property name="tdbLocation">
+      <value>C:/temp/TDB</value><!-- TODO put this value in a property file so that each script can use it -->
+    </property>
+  </bean>
+  
+  <bean id="webscript.edu.utep.trust.queryrdfstore.get" 
+    class="edu.utep.trust.QueryRdfStore" parent="DerivAbstractWebScript">
+    <property name="tdbLocation">
+      <value>C:/temp/TDB</value>
+    </property>
+  </bean>
  
 </beans>
