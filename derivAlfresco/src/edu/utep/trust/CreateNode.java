@@ -17,22 +17,31 @@ DAMAGE.
 
 package edu.utep.trust;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.alfresco.model.ContentModel;
+import org.alfresco.repo.security.permissions.AccessDeniedException;
+import org.alfresco.repo.transaction.RetryingTransactionHelper.RetryingTransactionCallback;
 import org.alfresco.service.cmr.repository.NodeRef;
 import org.alfresco.service.cmr.repository.StoreRef;
 import org.alfresco.service.namespace.NamespaceService;
 import org.alfresco.service.namespace.QName;
-import org.alfresco.web.app.servlet.DownloadContentServlet;
 import org.alfresco.util.ISO9075;
+import org.alfresco.util.TempFileProvider;
+import org.alfresco.web.app.servlet.DownloadContentServlet;
 import org.springframework.extensions.webscripts.WebScriptRequest;
 import org.springframework.extensions.webscripts.WebScriptResponse;
+import org.springframework.util.FileCopyUtils;
 
 public class CreateNode extends DerivAbstractWebScript {
 
@@ -44,7 +53,7 @@ public class CreateNode extends DerivAbstractWebScript {
 	public static final StoreRef SPACES_STORE = new StoreRef(StoreRef.PROTOCOL_WORKSPACE, "SpacesStore");
 
 	@Override
-	protected void executeImpl(WebScriptRequest req, WebScriptResponse res,
+	protected Object executeImpl(WebScriptRequest req, WebScriptResponse res,
 			File requestContent) throws Exception {
 
 		String project = req.getParameter(PARAM_PROJECT);
@@ -70,17 +79,50 @@ public class CreateNode extends DerivAbstractWebScript {
 
 		String URI = DownloadContentServlet.generateDownloadURL(newNode, filename);
 
-		PrintStream printStream = null;
-		try{
-			printStream = new PrintStream(res.getOutputStream(), true, "UTF-8");
-			printStream.println(URI);
-			printStream.flush();
-		} finally {
-			if(printStream != null) {
-				printStream.close();
-			}
-		}
+		return URI;
 	}
+	
+	 @Override
+	  public void execute(final WebScriptRequest req, final WebScriptResponse res) throws IOException {
+	    // First save the request content to a temporary file so we can reuse it in case of a retrying transaction
+	    BufferedInputStream inputStream = new BufferedInputStream(req.getContent().getInputStream());
+	    final File requestContent = TempFileProvider.createTempFile("cat_sdkdi", ".xml");
+	    FileCopyUtils.copy(inputStream, new FileOutputStream(requestContent));    
+	    
+	    // Wrap in a retrying transaction handler in case of db deadlock
+	    RetryingTransactionCallback<Object> callback = new RetryingTransactionCallback<Object>()
+	    {
+	      public Object execute() throws Exception
+	      {
+
+	        try {
+	          String URI = (String)executeImpl(req, res, requestContent);
+
+	        } catch (Exception e) {
+	          if(e instanceof AccessDeniedException) {
+	            res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+	          } else {
+	            // throw it back for web script framework to handle
+	            throw e;
+	          }
+	        }
+	        return null;
+	      }
+	    };
+	    String URI = (String)transactionService.getRetryingTransactionHelper().doInTransaction(callback, false);
+	    PrintStream printStream = null;
+	    try{
+	      printStream = new PrintStream(res.getOutputStream(), true, "UTF-8");
+	      printStream.println(URI);
+	      printStream.flush();
+	    } finally {
+	      if(printStream != null) {
+	        printStream.close();
+	      }
+	    }
+	    // Now clean up our temp file
+	    requestContent.delete();
+	  }
 
 	private NodeRef getNodeByXPath(String path){
 		NodeRef ret = null;

@@ -53,7 +53,7 @@ public class DropCreateTDBModel extends DerivAbstractWebScript {
   }
 
   @Override
-  protected void executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception {
+  protected Object executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception {
     try {
       File modelDirectory = new File(tdbLocation);
       // If it exists then clean it, else create it.
@@ -86,6 +86,7 @@ public class DropCreateTDBModel extends DerivAbstractWebScript {
         res.getOutputStream().close();
       }
     }
+    return null;
   }
 
   private void recursivelyVisitNode(NodeRef nodeRef, Model model) {

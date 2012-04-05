@@ -34,7 +34,7 @@ public class FileUploader extends DerivAbstractWebScript {
 	public static final StoreRef SPACES_STORE = new StoreRef(StoreRef.PROTOCOL_WORKSPACE, "SpacesStore");
 	
 	@Override
-	protected void executeImpl(WebScriptRequest req, WebScriptResponse res,
+	protected Object executeImpl(WebScriptRequest req, WebScriptResponse res,
 			File requestContent) throws Exception {
 		
 		String uuid = req.getParameter(PARAM_UUID);
@@ -43,7 +43,7 @@ public class FileUploader extends DerivAbstractWebScript {
 		
 		// Upload the image file
 	    createFile(node, new FileInputStream(requestContent));
-		
+		return null;
 	}
 
 	public void createFile(final NodeRef node, final InputStream content) {

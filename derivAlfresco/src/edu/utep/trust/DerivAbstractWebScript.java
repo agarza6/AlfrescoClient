@@ -126,7 +126,7 @@ public abstract class DerivAbstractWebScript extends AbstractWebScript {
     this.permissionService = permissionService;
   }
 
-  protected abstract void executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception;
+  protected abstract Object executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception;
 
   public void setOwnableService(OwnableService ownableService) {
     this.ownableService = ownableService;

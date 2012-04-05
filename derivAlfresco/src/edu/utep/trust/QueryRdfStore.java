@@ -65,7 +65,7 @@ public class QueryRdfStore extends DerivAbstractWebScript implements Application
   }
   
   @Override
-  protected void executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception {
+  protected Object executeImpl(WebScriptRequest req, WebScriptResponse res, File requestContent) throws Exception {
     try{
       String query = req.getParameter(PARAM_QUERY);//"SELECT ?person ?name WHERE {?person a <http://inference-web.org/2.0/pml-provenance.owl#Person> . ?person <http://inference-web.org/2.0/pml-provenance.owl#hasName> ?name .}";//
       if(query == null){
@@ -78,6 +78,7 @@ public class QueryRdfStore extends DerivAbstractWebScript implements Application
         res.getOutputStream().close();
       }
     }
+    return null;
   }
   
   

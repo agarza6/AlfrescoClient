@@ -4,5 +4,39 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SDK AlfrescoEmbedded"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SDK AlfrescoRemote"/>
+	<classpathentry kind="lib" path="lib/arq-2.8.7.jar"/>
+	<classpathentry kind="lib" path="lib/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/axis-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1_2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/iri-0.8.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/jena-2.6.4-tests.jar"/>
+	<classpathentry kind="lib" path="lib/jena-2.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/jetty.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-jdk1.5.jar"/>
+	<classpathentry kind="lib" path="lib/owlapi-bin.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-cli.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-core.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-datatypes.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-dig.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-el.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-explanation.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-jena.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-modularity.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-owlapi.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-owlapiv3.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-pellint.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-query.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-rules.jar"/>
+	<classpathentry kind="lib" path="lib/pellet-test.jar"/>
+	<classpathentry kind="lib" path="lib/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/snippet.jar"/>
+	<classpathentry kind="lib" path="lib/tdb-0.8.9-tests.jar"/>
+	<classpathentry kind="lib" path="lib/tdb-0.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/xsdlib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
